@@ -1,0 +1,8 @@
+.book {
+  border: 1px solid #000;
+  background-color: #ccc;
+  padding: 10px;
+  font-weight: 600;
+  display: inline-block;
+  margin: 10px 5px;
+}

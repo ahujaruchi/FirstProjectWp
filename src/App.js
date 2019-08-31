@@ -5,7 +5,7 @@ import "./App.css";
 
 class App extends React.Component {
   state = {
-    textInput: "Frist String"
+    textInput: "FristString"
   };
 
   UpdateText = event => {
@@ -14,11 +14,12 @@ class App extends React.Component {
     });
   };
 
-  Inputlength = () => {
-    let InputString = this.state.textInput;
-    let lengthString = InputString.length;
-    console.log(lengthString);
-  };
+  /*Inputlength = () => {
+    //console.log(this.state.textInput);
+    var InputString = this.state.textInput;
+    var lengthString = InputString.length;
+    return lengthString;
+  };*/
 
   render() {
     var Style = {
@@ -33,11 +34,11 @@ class App extends React.Component {
         <h1>Second React Compontent</h1>
         <input
           type="text"
-          value="this.state.textInput"
-          onChange="this.state.UpdateText"
+          onChange={this.UpdateText}
+          value={this.state.textInput}
         />
-        <Char lengthChar={this.Inputlength}></Char>
-        <Validation></Validation>
+        <Char Inputlength={this.state.textInput}></Char>
+        <Validation Inputlength={this.state.textInput.length}></Validation>
       </div>
     );
   }
