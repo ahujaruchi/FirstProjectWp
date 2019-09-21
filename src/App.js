@@ -21,6 +21,16 @@ class App extends React.Component {
     return lengthString;
   };*/
 
+
+  deleteChar = (i) => {
+    let charstring1 = this.state.textInput.split("");
+    let ch = charstring1.filter((character, inx) => {
+      return inx !== i ? character : null
+    });
+    let textInput = ch.join("");
+    this.setState({ textInput: textInput });
+  };
+
   render() {
     var Style = {
       backgroundColor: "orange",
@@ -37,7 +47,7 @@ class App extends React.Component {
           onChange={this.UpdateText}
           value={this.state.textInput}
         />
-        <Char Inputlength={this.state.textInput}></Char>
+        <Char Inputlength={this.state.textInput} click={this.deleteChar}></Char>
         <Validation Inputlength={this.state.textInput.length}></Validation>
       </div>
     );
